@@ -1,0 +1,817 @@
+/* =========================================================
+   APOIO DIGITAL AO IDOSO — Folha de estilos
+   Pensado para o público idoso:
+   - letras grandes (base de 20px) e fonte de fácil leitura
+   - alto contraste entre texto e fundo
+   - botões grandes, fáceis de tocar (mínimo de 56px de altura)
+   Abordagem MOBILE-FIRST: estilos base para o celular e
+   media queries (min-width) para tablet (600px) e desktop (900px).
+   Layout todo construído com FLEXBOX.
+   ========================================================= */
+
+
+/* ---------- 1. Variáveis ---------- */
+:root {
+  --azul-escuro: #12355b;
+  --azul: #1d5fa8;
+  --azul-claro: #e7f0fa;
+  --laranja: #c2410c;
+  --laranja-escuro: #9a3412;
+  --vermelho: #b42318;
+  --vermelho-claro: #fdecea;
+  --verde: #166534;
+  --texto: #1a1a1a;
+  --texto-suave: #3d4752;
+  --fundo: #ffffff;
+  --borda: #c9d3de;
+  --raio: 14px;
+  --sombra: 0 4px 14px rgba(18, 53, 91, 0.10);
+}
+
+
+/* ---------- 2. Reset e estilos gerais ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 125%; /* 1rem = 20px: letra maior que o padrão (16px) */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fundo);
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+  color: var(--azul-escuro);
+}
+
+a {
+  color: var(--azul);
+}
+
+/* Foco bem visível para quem navega pelo teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 4px solid var(--laranja);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ---------- 3. Botões ---------- */
+.botao {
+  display: inline-flex;          /* flex para centralizar o texto no botão */
+  justify-content: center;
+  align-items: center;
+  min-height: 56px;              /* área de toque grande */
+  padding: 12px 26px;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+}
+
+.botao-primario {
+  background-color: var(--laranja);
+  color: #ffffff;
+}
+
+.botao-primario:hover {
+  background-color: var(--laranja-escuro);
+}
+
+.botao-secundario {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.botao-secundario:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.botao-secundario-escuro {
+  border-color: var(--azul);
+  color: var(--azul);
+}
+
+.botao-secundario-escuro:hover {
+  background-color: var(--azul-claro);
+}
+
+.botao-limpar {
+  background-color: #ffffff;
+  border-color: var(--borda);
+  color: var(--texto-suave);
+}
+
+
+/* ---------- 4. Cabeçalho e menu ---------- */
+.cabecalho {
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--borda);
+}
+
+/* Celular: logo em cima e menu embaixo */
+.cabecalho-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 8px 4px;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.menu .menu-destaque {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background-color: var(--laranja);
+  color: #ffffff;
+}
+
+
+/* ---------- 5. Hero ---------- */
+.hero {
+  padding: 48px 0;
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+  color: #ffffff;
+}
+
+.hero-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero h1 {
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.hero-texto p {
+  font-size: 1.1rem;
+}
+
+.hero-botoes {
+  display: flex;
+  flex-direction: column; /* celular: um botão embaixo do outro */
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero-ilustracao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  font-size: 5rem;
+}
+
+
+/* ---------- 6. Seções ---------- */
+.secao {
+  padding: 56px 0;
+}
+
+.secao-alternada {
+  background-color: var(--azul-claro);
+}
+
+.secao-titulo {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.secao-subtitulo {
+  max-width: 700px;
+  margin: 10px auto 32px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- 7. A demanda ---------- */
+.demanda {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.demanda-card {
+  flex: 1; /* os três cards dividem o espaço igualmente */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  background-color: #ffffff;
+}
+
+.demanda-icone {
+  font-size: 2.2rem;
+}
+
+
+/* ---------- 8. Cards de tutoriais ---------- */
+.tutoriais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* O card inteiro é um link: fácil de tocar */
+.card-tutorial {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px 24px;
+  border: 3px solid transparent;
+  border-top: 8px solid var(--azul);
+  border-radius: var(--raio);
+  background-color: #ffffff;
+  color: var(--texto);
+  text-align: center;
+  text-decoration: none;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card-tutorial:hover {
+  transform: translateY(-4px);
+  border-color: var(--azul);
+}
+
+.card-alerta {
+  border-top-color: var(--vermelho);
+}
+
+.card-alerta:hover {
+  border-color: var(--vermelho);
+}
+
+.card-icone {
+  font-size: 3.2rem;
+}
+
+/* margin-top: auto empurra o "Ver tutorial" para o fim do card */
+.card-acao {
+  margin-top: auto;
+  font-weight: 700;
+  color: var(--laranja);
+}
+
+
+/* ---------- 9. Regras de ouro ---------- */
+.regras {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 860px;
+  margin: 32px auto 0;
+  list-style: none;
+}
+
+.regra {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border-left: 8px solid var(--vermelho);
+  border-radius: var(--raio);
+  background-color: var(--vermelho-claro);
+}
+
+.regra-numero {
+  flex-shrink: 0; /* o círculo não amassa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--vermelho);
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+
+/* ---------- 10. Formulário de ajuda ---------- */
+.ajuda {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.ajuda-info {
+  flex: 1;
+}
+
+.ajuda-info h2 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+}
+
+.vantagens {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  list-style: none;
+  font-weight: 700;
+  color: var(--verde);
+}
+
+.formulario {
+  flex: 2; /* o formulário ocupa o dobro do espaço do texto */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-radius: var(--raio);
+  background-color: #ffffff;
+  box-shadow: var(--sombra);
+}
+
+/* Celular: campos um embaixo do outro */
+.linha {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label,
+legend {
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 14px;
+  border: 2px solid var(--borda);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--texto);
+  background-color: #ffffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--azul);
+  border-color: var(--azul);
+}
+
+fieldset {
+  padding: 14px 18px;
+  border: 2px solid var(--borda);
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 6px;
+}
+
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 8px;
+}
+
+.opcoes label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Caixinhas maiores, fáceis de marcar */
+input[type="radio"],
+input[type="checkbox"] {
+  width: 26px;
+  height: 26px;
+  accent-color: var(--azul);
+}
+
+.form-botoes {
+  display: flex;
+  flex-direction: column-reverse; /* celular: "Enviar" fica em cima */
+  gap: 12px;
+}
+
+
+/* ---------- 11. Páginas de tutorial ---------- */
+.tutorial-topo {
+  padding: 40px 0;
+  background-color: var(--azul-escuro);
+  color: #ffffff;
+}
+
+.tutorial-topo-alerta {
+  background-color: var(--vermelho);
+}
+
+.tutorial-topo-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.tutorial-topo h1 {
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+
+.tutorial-icone {
+  font-size: 4rem;
+}
+
+.tutorial {
+  padding-top: 40px;
+  padding-bottom: 56px;
+}
+
+.bloco-tutorial + .bloco-tutorial {
+  margin-top: 48px;
+}
+
+.bloco-tutorial h2 {
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--azul-claro);
+  font-size: 1.4rem;
+}
+
+/* Lista de passos: número à esquerda, texto à direita */
+.passos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+}
+
+.passo {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px;
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  background-color: #ffffff;
+}
+
+.passo-numero {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--azul);
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.passo-texto {
+  flex: 1;
+}
+
+.passo-texto h3 {
+  margin-bottom: 4px;
+  font-size: 1.15rem;
+}
+
+.passo-dica {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #fff7e6;
+  color: var(--texto-suave);
+}
+
+/* Cards de golpes */
+.golpes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-golpe {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  border: 2px solid var(--borda);
+  border-top: 8px solid var(--vermelho);
+  border-radius: var(--raio);
+  background-color: #ffffff;
+}
+
+/* margin-top: auto alinha o "O que fazer" no fim do card */
+.golpe-fazer {
+  margin-top: auto;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background-color: #eaf6ee;
+  color: var(--verde);
+}
+
+/* Sinais de alerta: "etiquetas" que quebram linha */
+.sinais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+}
+
+.sinais li {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background-color: var(--vermelho-claro);
+  color: var(--vermelho);
+  font-weight: 700;
+}
+
+/* Botões de navegação ao final do tutorial */
+.proximos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 48px;
+}
+
+
+/* ---------- 12. Página de confirmação ---------- */
+.obrigado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  min-height: 70vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.obrigado-icone {
+  font-size: 4.5rem;
+}
+
+.obrigado h1 {
+  font-size: 2rem;
+}
+
+
+/* ---------- 13. Rodapé ---------- */
+.rodape {
+  padding: 40px 0 24px;
+  background-color: var(--azul-escuro);
+  color: #e6edf5;
+}
+
+.rodape-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rodape-coluna {
+  flex: 1;
+}
+
+.rodape h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.rodape ul {
+  list-style: none;
+}
+
+.rodape a {
+  color: #ffffff;
+}
+
+.rodape-final {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.rodape-conteudo + .rodape-final {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   MEDIA QUERY — TABLET (a partir de 600px)
+   ========================================================= */
+@media (min-width: 600px) {
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Botões do hero lado a lado */
+  .hero-botoes {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* 2 cards de golpe por linha: 50% menos metade do gap */
+  .card-golpe {
+    flex: 0 1 calc(50% - 10px);
+  }
+
+  /* Nome e telefone lado a lado */
+  .linha {
+    flex-direction: row;
+  }
+
+  /* Botões do formulário em linha, alinhados à direita */
+  .form-botoes {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  /* Ícone ao lado do título nos tutoriais */
+  .tutorial-topo-conteudo {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .proximos {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .rodape-conteudo {
+    flex-direction: row;
+  }
+}
+
+
+/* =========================================================
+   MEDIA QUERY — DESKTOP (a partir de 900px)
+   ========================================================= */
+@media (min-width: 900px) {
+
+  /* Cabeçalho fixo: logo à esquerda, menu à direita */
+  .cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .cabecalho-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero {
+    padding: 80px 0;
+  }
+
+  /* Texto à esquerda e ilustração à direita */
+  .hero-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero-texto {
+    flex: 1;
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-ilustracao {
+    width: 260px;
+    height: 260px;
+    font-size: 8rem;
+  }
+
+  .secao {
+    padding: 80px 0;
+  }
+
+  .secao-titulo {
+    font-size: 2rem;
+  }
+
+  /* Três cards de demanda lado a lado */
+  .demanda {
+    flex-direction: row;
+  }
+
+  /* 3 cards de tutorial por linha: (100% - 2 gaps de 20px) / 3 */
+  .card-tutorial {
+    flex: 0 1 calc((100% - 40px) / 3);
+  }
+
+  /* 3 cards de golpe por linha */
+  .card-golpe {
+    flex-basis: calc((100% - 40px) / 3);
+  }
+
+  /* Texto à esquerda e formulário à direita */
+  .ajuda {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .tutorial-topo h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Passos com largura de leitura confortável */
+  .passos {
+    max-width: 900px;
+  }
+}
