@@ -2,7 +2,7 @@
 
 Site com tutoriais simples, com letras grandes, para ajudar os idosos de Capanema/PR e região a fazer tarefas básicas no celular e na internet: **mandar mensagens**, **fazer chamadas de vídeo** e **identificar golpes**.
 
-**Site publicado:** https://SEU-PROJETO.vercel.app
+**Site publicado:** https://apoio-digital-ao-idoso.vercel.app
 **Repositório:** https://github.com/tiagoidio20/trabalho_Tiago.Teixeira
 
 ---
