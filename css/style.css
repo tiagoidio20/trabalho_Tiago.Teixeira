@@ -1,16 +1,8 @@
-/* =========================================================
-   APOIO DIGITAL AO IDOSO — Folha de estilos
-   Pensado para o público idoso:
-   - letras grandes (base de 20px) e fonte de fácil leitura
-   - alto contraste entre texto e fundo
-   - botões grandes, fáceis de tocar (mínimo de 56px de altura)
-   Abordagem MOBILE-FIRST: estilos base para o celular e
-   media queries (min-width) para tablet (600px) e desktop (900px).
-   Layout todo construído com FLEXBOX.
-   ========================================================= */
+/* Apoio Digital ao Idoso - estilos
+   Feito mobile-first: primeiro o celular, depois as media queries
+   para tablet (600px) e desktop (900px). */
 
-
-/* ---------- 1. Variáveis ---------- */
+/* variáveis */
 :root {
   --azul-escuro: #12355b;
   --azul: #1d5fa8;
@@ -28,8 +20,7 @@
   --sombra: 0 4px 14px rgba(18, 53, 91, 0.10);
 }
 
-
-/* ---------- 2. Reset e estilos gerais ---------- */
+/* reset e estilos gerais */
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +28,7 @@
 }
 
 html {
-  font-size: 125%; /* 1rem = 20px: letra maior que o padrão (16px) */
+  font-size: 125%; /* 1rem = 20px */
   scroll-behavior: smooth;
 }
 
@@ -57,7 +48,7 @@ a {
   color: var(--azul);
 }
 
-/* Foco bem visível para quem navega pelo teclado */
+/* foco visivel pra quem usa teclado */
 a:focus-visible,
 button:focus-visible {
   outline: 4px solid var(--laranja);
@@ -71,13 +62,12 @@ button:focus-visible {
   padding: 0 20px;
 }
 
-
-/* ---------- 3. Botões ---------- */
+/* botões */
 .botao {
-  display: inline-flex;          /* flex para centralizar o texto no botão */
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-height: 56px;              /* área de toque grande */
+  min-height: 56px; /* botao grande pra facilitar o toque */
   padding: 12px 26px;
   border: 3px solid transparent;
   border-radius: 999px;
@@ -127,14 +117,13 @@ button:focus-visible {
   color: var(--texto-suave);
 }
 
-
-/* ---------- 4. Cabeçalho e menu ---------- */
+/* cabeçalho e menu */
 .cabecalho {
   background-color: #ffffff;
   border-bottom: 2px solid var(--borda);
 }
 
-/* Celular: logo em cima e menu embaixo */
+/* no celular o logo fica em cima do menu */
 .cabecalho-conteudo {
   display: flex;
   flex-direction: column;
@@ -181,8 +170,7 @@ button:focus-visible {
   color: #ffffff;
 }
 
-
-/* ---------- 5. Hero ---------- */
+/* hero */
 .hero {
   padding: 48px 0;
   background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
@@ -208,24 +196,12 @@ button:focus-visible {
 
 .hero-botoes {
   display: flex;
-  flex-direction: column; /* celular: um botão embaixo do outro */
+  flex-direction: column;
   gap: 14px;
   margin-top: 28px;
 }
 
-.hero-ilustracao {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.12);
-  font-size: 5rem;
-}
-
-
-/* ---------- 6. Seções ---------- */
+/* seções */
 .secao {
   padding: 56px 0;
 }
@@ -246,8 +222,7 @@ button:focus-visible {
   color: var(--texto-suave);
 }
 
-
-/* ---------- 7. A demanda ---------- */
+/* a demanda */
 .demanda {
   display: flex;
   flex-direction: column;
@@ -255,7 +230,7 @@ button:focus-visible {
 }
 
 .demanda-card {
-  flex: 1; /* os três cards dividem o espaço igualmente */
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -265,19 +240,14 @@ button:focus-visible {
   background-color: #ffffff;
 }
 
-.demanda-icone {
-  font-size: 2.2rem;
-}
-
-
-/* ---------- 8. Cards de tutoriais ---------- */
+/* cards de tutoriais */
 .tutoriais {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-/* O card inteiro é um link: fácil de tocar */
+/* o card todo e um link */
 .card-tutorial {
   flex: 1 1 100%;
   display: flex;
@@ -309,19 +279,14 @@ button:focus-visible {
   border-color: var(--vermelho);
 }
 
-.card-icone {
-  font-size: 3.2rem;
-}
-
-/* margin-top: auto empurra o "Ver tutorial" para o fim do card */
+/* joga o "Ver tutorial" pro final do card */
 .card-acao {
   margin-top: auto;
   font-weight: 700;
   color: var(--laranja);
 }
 
-
-/* ---------- 9. Regras de ouro ---------- */
+/* regras de ouro */
 .regras {
   display: flex;
   flex-direction: column;
@@ -342,7 +307,7 @@ button:focus-visible {
 }
 
 .regra-numero {
-  flex-shrink: 0; /* o círculo não amassa */
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,8 +320,7 @@ button:focus-visible {
   font-weight: 700;
 }
 
-
-/* ---------- 10. Formulário de ajuda ---------- */
+/* formulário de ajuda */
 .ajuda {
   display: flex;
   flex-direction: column;
@@ -383,7 +347,7 @@ button:focus-visible {
 }
 
 .formulario {
-  flex: 2; /* o formulário ocupa o dobro do espaço do texto */
+  flex: 2;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -393,7 +357,6 @@ button:focus-visible {
   box-shadow: var(--sombra);
 }
 
-/* Celular: campos um embaixo do outro */
 .linha {
   display: flex;
   flex-direction: column;
@@ -458,7 +421,7 @@ legend {
   cursor: pointer;
 }
 
-/* Caixinhas maiores, fáceis de marcar */
+/* checkbox e radio maiores */
 input[type="radio"],
 input[type="checkbox"] {
   width: 26px;
@@ -468,12 +431,11 @@ input[type="checkbox"] {
 
 .form-botoes {
   display: flex;
-  flex-direction: column-reverse; /* celular: "Enviar" fica em cima */
+  flex-direction: column-reverse; /* no celular o Enviar fica em cima */
   gap: 12px;
 }
 
-
-/* ---------- 11. Páginas de tutorial ---------- */
+/* páginas de tutorial */
 .tutorial-topo {
   padding: 40px 0;
   background-color: var(--azul-escuro);
@@ -498,10 +460,6 @@ input[type="checkbox"] {
   color: #ffffff;
 }
 
-.tutorial-icone {
-  font-size: 4rem;
-}
-
 .tutorial {
   padding-top: 40px;
   padding-bottom: 56px;
@@ -518,7 +476,7 @@ input[type="checkbox"] {
   font-size: 1.4rem;
 }
 
-/* Lista de passos: número à esquerda, texto à direita */
+/* passos: numero na esquerda e texto do lado */
 .passos {
   display: flex;
   flex-direction: column;
@@ -567,7 +525,7 @@ input[type="checkbox"] {
   color: var(--texto-suave);
 }
 
-/* Cards de golpes */
+/* golpes */
 .golpes {
   display: flex;
   flex-wrap: wrap;
@@ -586,7 +544,6 @@ input[type="checkbox"] {
   background-color: #ffffff;
 }
 
-/* margin-top: auto alinha o "O que fazer" no fim do card */
 .golpe-fazer {
   margin-top: auto;
   padding: 12px 14px;
@@ -595,7 +552,7 @@ input[type="checkbox"] {
   color: var(--verde);
 }
 
-/* Sinais de alerta: "etiquetas" que quebram linha */
+/* sinais de alerta */
 .sinais {
   display: flex;
   flex-wrap: wrap;
@@ -611,7 +568,6 @@ input[type="checkbox"] {
   font-weight: 700;
 }
 
-/* Botões de navegação ao final do tutorial */
 .proximos {
   display: flex;
   flex-direction: column;
@@ -619,8 +575,7 @@ input[type="checkbox"] {
   margin-top: 48px;
 }
 
-
-/* ---------- 12. Página de confirmação ---------- */
+/* página de confirmação */
 .obrigado {
   display: flex;
   flex-direction: column;
@@ -632,16 +587,11 @@ input[type="checkbox"] {
   text-align: center;
 }
 
-.obrigado-icone {
-  font-size: 4.5rem;
-}
-
 .obrigado h1 {
   font-size: 2rem;
 }
 
-
-/* ---------- 13. Rodapé ---------- */
+/* rodapé */
 .rodape {
   padding: 40px 0 24px;
   background-color: var(--azul-escuro);
@@ -686,39 +636,31 @@ input[type="checkbox"] {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-
-/* =========================================================
-   MEDIA QUERY — TABLET (a partir de 600px)
-   ========================================================= */
+/* tablet */
 @media (min-width: 600px) {
-
   .hero h1 {
     font-size: 2.2rem;
   }
 
-  /* Botões do hero lado a lado */
   .hero-botoes {
     flex-direction: row;
     flex-wrap: wrap;
   }
 
-  /* 2 cards de golpe por linha: 50% menos metade do gap */
+  /* 2 cards por linha */
   .card-golpe {
     flex: 0 1 calc(50% - 10px);
   }
 
-  /* Nome e telefone lado a lado */
   .linha {
     flex-direction: row;
   }
 
-  /* Botões do formulário em linha, alinhados à direita */
   .form-botoes {
     flex-direction: row;
     justify-content: flex-end;
   }
 
-  /* Ícone ao lado do título nos tutoriais */
   .tutorial-topo-conteudo {
     flex-direction: row;
     text-align: left;
@@ -734,13 +676,9 @@ input[type="checkbox"] {
   }
 }
 
-
-/* =========================================================
-   MEDIA QUERY — DESKTOP (a partir de 900px)
-   ========================================================= */
+/* desktop */
 @media (min-width: 900px) {
-
-  /* Cabeçalho fixo: logo à esquerda, menu à direita */
+  /* menu fixo no topo */
   .cabecalho {
     position: sticky;
     top: 0;
@@ -756,7 +694,6 @@ input[type="checkbox"] {
     padding: 80px 0;
   }
 
-  /* Texto à esquerda e ilustração à direita */
   .hero-conteudo {
     flex-direction: row;
     justify-content: space-between;
@@ -771,12 +708,6 @@ input[type="checkbox"] {
     font-size: 2.6rem;
   }
 
-  .hero-ilustracao {
-    width: 260px;
-    height: 260px;
-    font-size: 8rem;
-  }
-
   .secao {
     padding: 80px 0;
   }
@@ -785,22 +716,19 @@ input[type="checkbox"] {
     font-size: 2rem;
   }
 
-  /* Três cards de demanda lado a lado */
   .demanda {
     flex-direction: row;
   }
 
-  /* 3 cards de tutorial por linha: (100% - 2 gaps de 20px) / 3 */
+  /* 3 por linha (descontando os 2 gaps de 20px) */
   .card-tutorial {
     flex: 0 1 calc((100% - 40px) / 3);
   }
 
-  /* 3 cards de golpe por linha */
   .card-golpe {
     flex-basis: calc((100% - 40px) / 3);
   }
 
-  /* Texto à esquerda e formulário à direita */
   .ajuda {
     flex-direction: row;
     align-items: flex-start;
@@ -810,7 +738,6 @@ input[type="checkbox"] {
     font-size: 2.2rem;
   }
 
-  /* Passos com largura de leitura confortável */
   .passos {
     max-width: 900px;
   }
