@@ -2,11 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <!-- viewport: obrigatório para o design responsivo funcionar no celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Apoio Digital ao Idoso: tutoriais simples, com letras grandes, para usar mensagens, fazer chamadas de vídeo e reconhecer golpes no celular.">
   <title>Apoio Digital ao Idoso | Capanema e Região</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -14,11 +12,10 @@
 </head>
 <body>
 
-  <!-- ========== CABEÇALHO ========== -->
+  <!-- cabeçalho -->
   <header class="cabecalho">
     <div class="container cabecalho-conteudo">
       <a href="index.html" class="logo">
-        <span aria-hidden="true">🤝</span>
         <span>Apoio Digital ao Idoso</span>
       </a>
       <nav aria-label="Menu principal">
@@ -33,7 +30,7 @@
 
   <main>
 
-    <!-- ========== HERO (apresentação) ========== -->
+    <!-- hero (apresentação) -->
     <section class="hero">
       <div class="container hero-conteudo">
         <div class="hero-texto">
@@ -47,11 +44,10 @@
             <a href="#ajuda" class="botao botao-secundario">Quero ajuda de alguém</a>
           </div>
         </div>
-        <div class="hero-ilustracao" aria-hidden="true">📱</div>
       </div>
     </section>
 
-    <!-- ========== A DEMANDA ========== -->
+    <!-- a demanda -->
     <section id="demanda" class="secao">
       <div class="container">
         <h2 class="secao-titulo">Por que este site existe</h2>
@@ -62,17 +58,14 @@
 
         <div class="demanda">
           <article class="demanda-card">
-            <span class="demanda-icone" aria-hidden="true">😟</span>
             <h3>A dificuldade</h3>
             <p>Botões pequenos, letras miúdas e medo de "estragar o celular" afastam o idoso da tecnologia.</p>
           </article>
           <article class="demanda-card">
-            <span class="demanda-icone" aria-hidden="true">⚠️</span>
             <h3>O risco</h3>
             <p>Golpes por mensagem e ligação usam a falta de experiência para pedir dinheiro e senhas.</p>
           </article>
           <article class="demanda-card">
-            <span class="demanda-icone" aria-hidden="true">💚</span>
             <h3>A solução</h3>
             <p>Tutoriais curtos, com letras grandes, e um formulário para pedir ajuda de um voluntário.</p>
           </article>
@@ -80,7 +73,7 @@
       </div>
     </section>
 
-    <!-- ========== TUTORIAIS ========== -->
+    <!-- tutoriais -->
     <section id="tutoriais" class="secao secao-alternada">
       <div class="container">
         <h2 class="secao-titulo">Escolha o que quer aprender</h2>
@@ -88,21 +81,18 @@
 
         <div class="tutoriais">
           <a href="mensagens.html" class="card-tutorial">
-            <span class="card-icone" aria-hidden="true">💬</span>
             <h3>Mandar mensagens</h3>
             <p>Escrever, mandar áudio e enviar fotos no WhatsApp.</p>
             <span class="card-acao">Ver tutorial →</span>
           </a>
 
           <a href="chamada-video.html" class="card-tutorial">
-            <span class="card-icone" aria-hidden="true">📹</span>
             <h3>Chamada de vídeo</h3>
             <p>Ver e conversar com a família pela tela do celular.</p>
             <span class="card-acao">Ver tutorial →</span>
           </a>
 
           <a href="golpes.html" class="card-tutorial card-alerta">
-            <span class="card-icone" aria-hidden="true">🛡️</span>
             <h3>Identificar golpes</h3>
             <p>Os golpes mais comuns e como se proteger.</p>
             <span class="card-acao">Ver tutorial →</span>
@@ -111,7 +101,7 @@
       </div>
     </section>
 
-    <!-- ========== REGRAS DE OURO ========== -->
+    <!-- regras de ouro -->
     <section class="secao">
       <div class="container">
         <h2 class="secao-titulo">3 regras de ouro contra golpes</h2>
@@ -133,7 +123,7 @@
       </div>
     </section>
 
-    <!-- ========== PEDIR AJUDA (formulário) ========== -->
+    <!-- pedir ajuda (formulário) -->
     <section id="ajuda" class="secao secao-alternada">
       <div class="container ajuda">
         <aside class="ajuda-info">
@@ -143,13 +133,13 @@
             entra em contato para ensinar com calma.
           </p>
           <ul class="vantagens">
-            <li>✔ Atendimento gratuito</li>
-            <li>✔ Explicação com paciência</li>
-            <li>✔ Pode ser por telefone ou pessoalmente</li>
+            <li>Atendimento gratuito</li>
+            <li>Explicação com paciência</li>
+            <li>Pode ser por telefone ou pessoalmente</li>
           </ul>
         </aside>
 
-        <!-- O site é estático (sem servidor): o envio leva para a página obrigado.html -->
+        <!-- sem back-end, por enquanto o form so manda pra pagina obrigado -->
         <form class="formulario" action="obrigado.html" method="get">
 
           <div class="linha">
@@ -212,11 +202,11 @@
 
   </main>
 
-  <!-- ========== RODAPÉ ========== -->
+  <!-- rodapé -->
   <footer class="rodape">
     <div class="container rodape-conteudo">
       <div class="rodape-coluna">
-        <h3>🤝 Apoio Digital ao Idoso</h3>
+        <h3>Apoio Digital ao Idoso</h3>
         <p>Inclusão digital para os idosos de Capanema e região.</p>
       </div>
       <div class="rodape-coluna">
